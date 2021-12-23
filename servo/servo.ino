@@ -14,6 +14,11 @@ void loop() {
 
 // Rotate the servo to a target degree
 void rotateToDegree(int targetDegree) {
+  // Normalise the target degree
+  while (targetDegree < 0) targetDegree = targetDegree + 360;
+  targetDegree = targetDegree % 360;
+
+  // Calculate the distancce to target and rotate
   int degrees = targetDegree - currentDegree;
   rotateDegrees(degrees);
 }
