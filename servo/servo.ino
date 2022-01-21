@@ -6,7 +6,10 @@ int currentDegree = 0;
 
 void setup() {
   servo.attach(servoPort);
-  rotateToDegree(180);
+  rotateDegrees(180);
+  delay(5);
+  rotateDegrees(180);
+
 }
 
 void loop() {
@@ -34,7 +37,7 @@ void rotateDegrees(int degrees) {
   int offset = 2;
   int dir = forward;
   if (degrees < 0){
-    degrees = degrees * -1;
+    //degrees = degrees * -1;
     dir = backward;
   }
 
