@@ -5,9 +5,10 @@
 ServoInputPin<2> channel;
 
 // Setup servo ports and variables
-Servo servo;
-int servoPort1 = D7;
-int servoPort2 = D6;
+Servo servo1;
+Servo servo2;
+#define servoPort1 7
+#define servoPort2 6
 int currentDegree = 0;
 
 // Define stepper motor connections and steps per revolution:
@@ -40,6 +41,7 @@ void loop() {
     rotateDegrees(90, 2);  // rotate servo 2 by 90 degrees
     delay(3000);           // wait 3 seconds to avoid over-deploying
   }
+}
 
 // Rotate the servo to a target degree
 void rotateToDegree(int targetDegree, int servo) {
