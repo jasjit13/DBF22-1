@@ -48,7 +48,7 @@ void loop() {
     Serial.print("Deploying...\n");
     
     // Run stepper if package not on trapdoor
-    while (sensorPulse > 10) {
+    while (sensorPulse() > 10) {
       stepper();             // Run stepper demo program
       delay(1000);           // wait 1 second
     }
